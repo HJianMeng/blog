@@ -1,8 +1,8 @@
-## 需求背景
+# 需求背景
 
 	自定义代码检查，在编译阶段防止漏掉注解导致权限出现异常；所以在Controller层检查是否有权限注解；
 
-## 实现步骤
+# 实现步骤
 
 ```java
 // 1 自定义注解：
@@ -45,7 +45,7 @@ public class DemoController {
 }
 ```
 
-## 自定义实现
+# 自定义实现
 
 ```JAVA
 @SupportedAnnotationTypes("com.test.annotation.CheckPermissionAnnoation")
@@ -87,7 +87,7 @@ public class CheckPermissionAnnoationProcesser extends AbstractProcessor {
 
 ```
 
-## 添加文件
+# 添加文件
 
 在resources/META-INF/services文件夹下新建文件javax.annotation.processing.Processor
 
@@ -106,7 +106,7 @@ com.test.processor.CheckPermissionAnnoationProcesser
 this method must have annotation: PermissionAnnoation >>>  DemoController.testMethod2;
 ```
 
-## 完成
+# 完成
 
 至于权限注解中需要怎么实现，使用AOP拦截即可；切面为贴了权限注解的地方；
 
